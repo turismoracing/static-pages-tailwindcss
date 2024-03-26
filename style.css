@@ -16,6 +16,15 @@
     font-family: "Montserrat", sans-serif;
 }
 
+.body-config--bg-black {
+    background-color: black;
+}
+
+.body-config img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
 .title {
     text-transform: uppercase;
     text-align: center;
@@ -81,6 +90,11 @@
     background-position: 90% center;
 }
 
+.header-background-extended {
+    background-image: url("public/img/extended/background-gamer.png");
+    background-position: 80% center;
+}
+
 .header-content {
     padding: 1rem;
     margin-inline: 0.5rem;
@@ -106,14 +120,21 @@
     transform-origin: bottom right;
 }
 
+.section-content--no-skew {
+    background-color: white;
+
+    padding-inline: 1rem;
+    padding-block: 1.5rem;
+}
+
 .section-content--black {
     background-color: #161616;
     color: white;
 }
 
 .section-content--fix {
-    padding-block: 6rem;
-    margin-block-start: -4rem;
+    padding-block-start: 4rem;
+    padding-block-end: 10rem;
 }
 
 .section-wrapper {
@@ -146,7 +167,7 @@
 }
 
 .form {
-    max-width: 56rem;
+    max-inline-size: 56rem;
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -188,8 +209,10 @@
 .form-inputs-wrapper {
     display: flex;
     flex-direction: column;
-    margin-inline: auto;
+    margin-inline: 0;
     gap: 1rem;
+
+    max-inline-size: 42rem;
 }
 
 .form-inputs-wrapper__input {
@@ -200,8 +223,26 @@
     box-sizing: border-box;
 }
 
+.form-inputs-wrapper__input--black {
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.form-inputs-wrapper__input--black::placeholder {
+    color: white;
+}
+
 .form-inputs-wrapper__input:focus {
     outline: none;
+}
+
+.form-inputs-wrapper__select {
+    inline-size: 100%;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    background-color: var(--turismo-purple);
+    color: white;
+    border: 2px solid var(--turismo-purple);
 }
 
 .button-wrapper {
@@ -264,19 +305,21 @@ a.button-wrapper__button {
 .features {
     padding-block: 5rem;
     display: grid;
-    transform: skewY(-3deg);
     background-color: white;
     margin-block-start: -3.5rem;
 }
 
 .features-wrapper {
-    margin-inline: 3rem;
+    margin-inline: auto;
     margin-block: 3.5rem;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 2rem;
     justify-items: center;
-    transform: skewY(3deg);
+}
+
+.features-wrapper--1-col {
+    row-gap: 5rem;
 }
 
 .feature {
@@ -292,6 +335,13 @@ a.button-wrapper__button {
     inline-size: 7rem;
     position: relative;
     inset-block-end: 0;
+}
+
+.feature__title {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-block-end: 0.5rem;
 }
 
 .generic-flex {
@@ -358,7 +408,7 @@ a.button-wrapper__button {
 }
 
 .reviews-wrapper {
-    max-width: 28rem;
+    max-inline-size: 28rem;
     margin-inline: auto;
     display: grid;
     gap: 5rem;
@@ -395,24 +445,42 @@ a.button-wrapper__button {
 }
 
 .footer {
-    min-block-size: 600px;
+    min-block-size: 400px;
     /* margin-inline: 1rem; */
     background: white;
     transform: skewY(-3deg);
     transform-origin: bottom right;
-    margin-block-start: -3rem;
+    padding-inline: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer--black {
+    background: black;
+    color: white;
 }
 
 .footer-content-wrapper {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding-block: 10rem;
+    padding-block: 8rem;
     transform: skewY(3deg);
+    gap: 1rem;
+}
+
+.section-content--no-skew img.section-wrapper__image {
+    display: none;
 }
 
 /* SM */
 @media screen and (min-width: 640px) {
+    .title {
+        font-size: 2.25rem;
+    }
+
     .header-content {
-        padding: 2rem;
+        /*padding: 2rem;*/
         margin-inline: 3rem;
     }
 
@@ -459,8 +527,17 @@ a.button-wrapper__button {
         grid-template-rows: repeat(2, minmax(0, 1fr));
     }
 
+    .features-wrapper--1-col {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 5rem;
+    }
+
     .feature__image {
         inline-size: 8rem;
+    }
+
+    .feature__title {
+        font-size: 1.5rem;
     }
 
     .subtitle {
@@ -502,6 +579,9 @@ a.button-wrapper__button {
     .review__text {
         font-size: 1.125rem;
     }
+    .section-content--no-skew img.section-wrapper__image {
+        display: block;
+    }
 }
 
 /* MD */
@@ -529,6 +609,11 @@ a.button-wrapper__button {
     .form-inputs-wrapper {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-inline: auto;
+    }
+    .form-inputs-wrapper--flex {
+        display: flex;
+        min-inline-size: 42rem;
     }
 
     .button-wrapper {
@@ -539,6 +624,10 @@ a.button-wrapper__button {
         align-self: self-end;
         padding-inline: 0.75rem;
         margin-inline: 0;
+    }
+
+    .footer a.button-wrapper__button {
+        margin-inline: auto;
     }
 
     .iframe-maps {
@@ -579,6 +668,10 @@ a.button-wrapper__button {
         background-position: center;
     }
 
+    .header--background-extended {
+        background-position: top;
+    }
+
     .header-content__title {
         text-align: left;
         font-size: 2.25rem;
@@ -603,8 +696,16 @@ a.button-wrapper__button {
         grid-template-rows: repeat(1, minmax(0, 1fr));
     }
 
+    .features-wrapper--3-cols {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .feature__image {
         inline-size: 50%;
+    }
+
+    .feature__title {
+        font-size: 1.125rem;
     }
 
     .section-background--delivery {
@@ -620,7 +721,7 @@ a.button-wrapper__button {
     }
 
     .reviews-wrapper {
-        max-width: 100%;
+        max-inline-size: 100%;
         margin-inline: 3rem;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: repeat(1, minmax(0, 1fr));
@@ -637,6 +738,10 @@ a.button-wrapper__button {
         inline-size: 40%;
     }
 
+    .feature__title {
+        font-size: 1.25rem;
+    }
+
     .review__image {
         inline-size: 50%;
     }
@@ -650,6 +755,10 @@ a.button-wrapper__button {
 @media screen and (min-width: 1536px) {
     .features-wrapper {
         gap: 5rem;
+    }
+
+    .feature__title {
+        font-size: 1.5rem;
     }
 
     .subtitle {
