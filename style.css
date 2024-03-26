@@ -90,9 +90,14 @@
     background-position: 90% center;
 }
 
-.header-background-extended {
+.header--background-extended {
     background-image: url("public/img/extended/background-gamer.png");
     background-position: 80% center;
+}
+
+.header--background-standards {
+    background-image: url("public/img/standard/background-header.png");
+    background-position: 90% center;
 }
 
 .header-content {
@@ -164,6 +169,114 @@
     font-weight: bold;
 
     transform: skewY(3deg);
+}
+
+.standards-section {
+    display: flex;
+    align-items: center;
+    min-block-size: 600px;
+    margin-block-start: 1.5rem;
+
+    background-color: #d9aa7c;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10% center;
+    background-blend-mode: multiply;
+
+    transform: skewY(-3deg);
+}
+
+div.standards-section:nth-of-type(2) {
+    margin-block-start: -0.5rem;
+}
+
+div.standards-section:nth-of-type(odd) {
+    background-color: #8866d9;
+    background-position: 90% center;
+}
+
+.standards-section--bg-1 {
+    background-image: url("public/img/standard/background-steel.png");
+}
+
+.standards-section--bg-2.standards-section--bg-2.standards-section--bg-2 {
+    background-image: url("public/img/standard/background-cutting.png");
+    background-color: #45346e;
+}
+
+.standards-section--bg-3 {
+    background-image: url("public/img/standard/background-paint.png");
+}
+
+.standards-section--bg-4 {
+    background-image: url("public/img/standard/background-drilling.png");
+}
+
+.standards-section--bg-5 {
+    background-image: url("public/img/standard/background-machine.png");
+    background-color: #6e563f;
+}
+
+.standards-section--bg-6 {
+    background-image: url("public/img/standard/background-parts.png");
+}
+
+.standards-section--bg-7 {
+    background-image: url("public/img/standard/background-pallet.png");
+    background-color: #6e563f;
+}
+
+.standards-section-content {
+    padding: 0.5rem;
+    margin-block: 0.5rem;
+    transform: skewY(3deg);
+    color: white
+}
+
+.standards-section-content__title {
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.875rem;
+    margin-block-end: 0.5rem;
+}
+
+.standards-section-content__paragraph {
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.standards-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-block-size: 600px;
+    background-color: white;
+    transform: skewY(-3deg);
+    transform-origin: bottom right;
+}
+
+.standards-footer-content {
+    padding: 1.5rem;
+    margin-inline: auto;
+    max-inline-size: 1000px;
+    text-align: center;
+    padding-block: 3rem;
+    transform: skewY(3deg);
+}
+
+.standards-footer-content__paragraph {
+    font-size: 1rem;
+    margin-block: 2rem;
+}
+
+.standards-footer-content__title {
+    color: var(--turismo-purple);
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin-block: 1rem;
 }
 
 .form {
@@ -568,6 +681,23 @@ a.button-wrapper__button {
         font-size: 2.25rem;
     }
 
+    .standards-section-content {
+        padding: 2rem;
+        margin-inline: 8rem;
+    }
+
+    .standards-footer-content {
+        padding-block: 10rem;
+    }
+
+    .standards-footer-content__paragraph {
+        font-size: 1.25rem;
+    }
+
+    .standards-footer-content__title {
+        font-size: 1.5rem;
+    }
+
     .review__image {
         inline-size: 50%;
     }
@@ -579,6 +709,7 @@ a.button-wrapper__button {
     .review__text {
         font-size: 1.125rem;
     }
+
     .section-content--no-skew img.section-wrapper__image {
         display: block;
     }
@@ -645,6 +776,14 @@ a.button-wrapper__button {
     .inner-section {
         text-align: left;
     }
+
+    .standards-footer-content__paragraph {
+        font-size: 1.875rem;
+    }
+
+    .standards-footer-content__title {
+        font-size: 2.25rem;
+    }
 }
 
 /* LG */
@@ -685,6 +824,33 @@ a.button-wrapper__button {
     .section-variation {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(1, minmax(0, 1fr));
+    }
+
+    .standards-section {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(1, minmax(0, 1fr));
+        place-items: center;
+
+        background-blend-mode: normal;
+        background-position: center;
+    }
+
+    .standards-section-content {
+        margin-inline-start: 3rem;
+        margin-inline-end: 8rem;
+        color: black;
+    }
+
+    .standards-section-content__title {
+        text-align: left;
+        font-size: 2.25rem;
+    }
+
+    .standards-section-content__paragraph {
+        font-weight: 300;
+        text-align: left;
+        font-size: 1.25rem;
     }
 
     .iframe-maps {
