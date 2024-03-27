@@ -100,6 +100,11 @@
     background-position: 90% center;
 }
 
+.header--background-warranty {
+    background-image: url("public/img/warranty/background-ray.png");
+    background-position: 80% center;
+}
+
 .header-content {
     padding: 1rem;
     margin-inline: 0.5rem;
@@ -230,7 +235,7 @@ div.standards-section:nth-of-type(odd) {
     padding: 0.5rem;
     margin-block: 0.5rem;
     transform: skewY(3deg);
-    color: white
+    color: white;
 }
 
 .standards-section-content__title {
@@ -586,6 +591,16 @@ a.button-wrapper__button {
     display: none;
 }
 
+.feature-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding-inline: 2.5rem;
+    max-inline-size: 600px;
+    margin: 2rem auto;
+}
+
 /* SM */
 @media screen and (min-width: 640px) {
     .title {
@@ -712,6 +727,10 @@ a.button-wrapper__button {
 
     .section-content--no-skew img.section-wrapper__image {
         display: block;
+    }
+
+    .feature-flex {
+        gap: 2rem;
     }
 }
 
@@ -895,6 +914,10 @@ a.button-wrapper__button {
 
     .review__image {
         inline-size: 75%;
+    }
+
+    .feature-flex {
+        flex-direction: row;
     }
 }
 
