@@ -1,0 +1,8 @@
+# Folders
+/node_modules
+/test-results
+
+# Files
+browser.test.ts
+package-lock.json
+package.json

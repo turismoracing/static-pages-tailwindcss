@@ -1,4 +1,4 @@
-/* Erase the followin 3 lines to use without Tailwind CSS*/
+/* Erase the following 3 lines to use without Tailwind CSS*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,9 +18,18 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
 input[type="number"]:hover,
 input[type="number"]:focus {
     -moz-appearance: number-input;
+}
+
+select {
+    -webkit-appearance: none;
 }
 
 .body-config {
@@ -1258,6 +1267,8 @@ img.image-and-text__image {
 
     .feature-flex {
         flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
     }
 
     .zip-section {
