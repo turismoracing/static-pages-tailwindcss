@@ -5,6 +5,7 @@
 
 :root {
     --turismo-purple: #5425de;
+    --black-bg: #161616;
 }
 
 * {
@@ -13,12 +14,21 @@
     margin: 0;
 }
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
 .body-config {
     font-family: "Montserrat", sans-serif;
 }
 
 .body-config--bg-black {
-    background-color: black;
+    background-color: var(--black-bg);
 }
 
 .body-config img {
@@ -98,7 +108,7 @@
 
 .header--background-standards {
     background-image: url("public/img/standard/background-header.png");
-    background-position: 90% center;
+    background-position: 90% 20%;
 }
 
 .header--background-warranty {
@@ -144,7 +154,7 @@
 }
 
 .section-content--black {
-    background-color: #161616;
+    background-color: var(--black-bg);
     color: white;
 }
 
@@ -350,6 +360,7 @@ div.standards-section:nth-of-type(odd) {
 .form-inputs-wrapper__input--black {
     border: 2px solid white;
     background-color: transparent;
+    color: white;
 }
 
 .form-inputs-wrapper__input--black::placeholder {
@@ -367,6 +378,10 @@ div.standards-section:nth-of-type(odd) {
     background-color: var(--turismo-purple);
     color: white;
     border: 2px solid var(--turismo-purple);
+}
+
+.form-inputs-wrapper__select option {
+    background-color: var(--turismo-purple);
 }
 
 .button-wrapper {
@@ -453,6 +468,21 @@ a.button-wrapper__button {
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    position: relative;
+}
+
+.feature__number {
+    background-color: var(--turismo-purple);
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    inline-size: 2rem;
+    block-size: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature__image {
@@ -465,7 +495,6 @@ a.button-wrapper__button {
     text-transform: uppercase;
     font-size: 1.25rem;
     font-weight: bold;
-    margin-block-end: 0.5rem;
 }
 
 .generic-flex {
@@ -584,8 +613,12 @@ a.button-wrapper__button {
 }
 
 .footer--black {
-    background: black;
+    background: var(--black-bg);
     color: white;
+}
+
+.footer--fix {
+    margin-block-start: -8rem;
 }
 
 .footer-content-wrapper {
@@ -599,6 +632,7 @@ a.button-wrapper__button {
 
 .section-content--no-skew img.section-wrapper__image {
     display: none;
+    margin-inline: auto;
 }
 
 .feature-flex {
@@ -655,10 +689,10 @@ img.image-and-text__image {
     position: absolute;
     border-color: var(--turismo-purple);
     border-style: solid;
-    border-width: 4px;
+    border-width: 3px;
     inline-size: 91.67%;
     z-index: -50;
-    inset-block-start: 35%;
+    inset-block-start: 30%;
     inset-inline-start: 1rem;
 }
 
@@ -690,6 +724,13 @@ img.image-and-text__image {
 .text-wrapper {
     margin-block: 0.5rem;
     padding: 1.5rem;
+}
+
+.text-wrapper--fix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .text-wrapper__subtitle {
@@ -938,6 +979,11 @@ img.image-and-text__image {
         font-size: 1.875rem;
     }
 
+    .checkmark-container__line {
+        inset-block-start: 35%;
+        border-width: 4px;
+    }
+
     .checkmark__image {
         inline-size: 5rem;
     }
@@ -1056,6 +1102,12 @@ img.image-and-text__image {
 
     .iframe-maps {
         inline-size: 700px;
+    }
+
+    .feature__number {
+        inline-size: 2.5rem;
+        block-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .feature__image {
@@ -1177,10 +1229,6 @@ img.image-and-text__image {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .feature__image {
-        inline-size: 50%;
-    }
-
     .feature__title {
         font-size: 1.125rem;
     }
@@ -1191,7 +1239,7 @@ img.image-and-text__image {
     }
 
     .inner-section {
-        background-color: #161616;
+        background-color: var(--black-bg);
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(1, minmax(0, 1fr));
@@ -1251,10 +1299,6 @@ img.image-and-text__image {
 
 /* XL */
 @media screen and (min-width: 1280px) {
-    .feature__image {
-        inline-size: 40%;
-    }
-
     .feature__title {
         font-size: 1.25rem;
     }
