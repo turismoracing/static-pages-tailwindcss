@@ -34,6 +34,7 @@ select {
 
 .body-config {
     font-family: "Montserrat", sans-serif;
+    color: black;
 }
 
 .body-config--bg-black {
